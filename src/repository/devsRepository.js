@@ -1,12 +1,12 @@
 const devsMongoose = require("../entities/devsMongoose");
+const dev = require('../entities/devs')
 
 class DevsRepository
 {
-    async listDevs(query)
+    async listDevs()
     {
-         let retorno = await devsMongoose.find().lean().exec();
-         console.log(retorno);
-         return retorno;
+         const devList = await devsMongoose.find().lean();
+         return devList;
     }
     async saveDev(dev)
     {

@@ -4,15 +4,18 @@ const gitHubMicroService = require('../microservices/github');
 
 class DevService
 {
-    listDevs()
+    async listDevs()
     {
-        let devs = new developer();
-        let query = 
+        try
         {
-            id: 1
-        };
-        devs = developerRepository.prototype.listDevs(query);
-        return devs;
+            let devs = new developer();
+            devs = await developerRepository.prototype.listDevs();
+            return devs;
+        }
+        catch(err)
+        {
+            throw err;
+        }
     }
     async saveUser(gitUser,techs,location)
     {

@@ -3,7 +3,7 @@ const devService = require('../src/services/devsService');
 const routes = Router();
 
 routes.get("/devs", async(req,resp)=>{
-    let res = devService.prototype.listDevs();
+    let res = await devService.prototype.listDevs();
     resp.json(res);
 });
 

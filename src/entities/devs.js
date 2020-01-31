@@ -7,7 +7,7 @@ class Devs
         this.bio = bio;
         this.avatar_url = avatar_url;
         this.techs = techs; 
-        this.location = new UserLocation(location.type,location.coordinates);
+        this.location = location ? new UserLocation(location.type,location.coordinates) : "";
     }
 }
 class UserLocation 
